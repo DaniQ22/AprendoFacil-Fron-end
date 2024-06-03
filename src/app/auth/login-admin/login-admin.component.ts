@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class LoginAdminComponent {
 
+  //Varible para definir el typo de input (Contraseña)
+  typeText: string = "password";
+
+
+  //Metodo para ver la constraseña
+  showPasword(event: any){
+    this.typeText = event.target.checked ? "text" : "password";
+  }
 }

@@ -1,0 +1,94 @@
+body {
+    width: 100%;
+    height: 100vh;
+    background: #492b2b9f;
+    margin: 0;
+    padding: 0;
+    background-image: url("../../../assets/Back-groundLogib.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+
+.container-back {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.394);
+}
+
+.login {
+    height: 25rem;
+    width: 20rem;
+    border: 1px solid rgb(21, 21, 21);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 10px;
+    background-color: #5680ad10;
+    backdrop-filter: blur(0.4rem);
+
+    .username,
+    .password {
+        width: 80%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        color: black;
+        border-radius: 10px;
+        background-color: rgba(112, 105, 105, 0.765);
+
+        i{
+            color: #fff;
+
+        }
+        input{
+            background-color: transparent;
+            outline: none;
+            width: 80%;
+            height: 70%;
+            border: none;
+            color: #fff;
+        }
+        input::placeholder{
+            color: #fff;
+        }
+        
+    }
+
+    .show-password {
+        width: 80%;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        color: #fff;
+    }
+
+    .tittle-login {
+        color: #fff;
+        font-weight: 600;
+    }
+
+    button {
+        width: 50%;
+        height: 40px;
+        border-radius: 10px;
+        color: black;
+        font-size: 15px;
+        font-weight: 900;
+        background-color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: background-color .3s ease ;
+    }
+    button:hover{
+        background-color: rgb(212, 209, 209);
+    }
+}
