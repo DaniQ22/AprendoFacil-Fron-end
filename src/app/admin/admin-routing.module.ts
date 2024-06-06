@@ -5,10 +5,11 @@ import { AdminLayoutComponent } from '../admin/admin-layout/admin-layout.compone
 
 const routes: Routes = [
     {
+        path: '', component: AdminLayoutComponent
     }
 ]
 @NgModule({
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule],
 })
-export class CustomerRoutingModule { }
+export class AdminRoutingModule { }

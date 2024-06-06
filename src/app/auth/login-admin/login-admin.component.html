@@ -1,28 +1,29 @@
 <body>
     <div class="container-back">
-        <div class="login">
-            <div class="tittle-login">
-                <h2>
-                    Incia sesión
-                </h2>
+        <form [formGroup]="formLogin">
+
+            <div class="login">
+                <div class="tittle-login">
+                    <h2>
+                        Incia sesión
+                    </h2>
+                </div>
+
+                <div class="username">
+                    <i class="fas fa-user"></i>
+                    <input formControlName="email" type="text" placeholder="Username">
+                </div>
+                <div class="password">
+                    <i class="fas fa-lock"></i>
+                    <input formControlName="password" [type]="typeText" placeholder="password">
+                </div>
+                <div class="show-password">
+                    <input type="checkbox" (change)="showPasword($event)">
+                    <label for="">Mostrar contraseña</label>
+                </div>
+                <button
+                (click)="login()">Login</button>
             </div>
-    
-            <div class="username">
-                <i class="fas fa-user"></i>
-                <input type="text" placeholder="Username">
-            </div>
-            <div class="password">
-                <i class="fas fa-lock"></i>
-                <input [type]="typeText" placeholder="password">
-            </div>
-            <div class="show-password">
-                <input type="checkbox"
-                (change)="showPasword($event)">
-                <label for="">Mostrar contraseña</label>
-            </div>
-            <button>Login</button>
-    
-        </div>
+        </form>
     </div>
-    
 </body>

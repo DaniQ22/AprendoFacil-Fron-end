@@ -7,6 +7,10 @@ import { AdminLayoutComponent } from './admin/admin-layout/admin-layout.componen
 import { LoginAdminComponent } from './auth/login-admin/login-admin.component';
 import { CustomerLayoutComponent } from './customer/customer-layout/customer-layout.component';
 import { CustomerRoutingModule } from './customer/customer-routing.module';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { HttpErrorInterceptor } from './core/Interceptor/error.interceptor';
+
 
 @NgModule({
   declarations: [
@@ -18,9 +22,15 @@ import { CustomerRoutingModule } from './customer/customer-routing.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CustomerRoutingModule
+    CustomerRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
+    
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true }
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

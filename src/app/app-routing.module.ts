@@ -8,6 +8,9 @@ const routes: Routes = [
   },
   {
     path: 'admin', loadChildren: () => import('./auth/auth-routing.module').then(m=>m.AuthRoutingModule)
+  },
+  {
+    path: 'dashboard', loadChildren: () => import('./admin/admin-routing.module').then(m=>m.AdminRoutingModule)
   }
 
 ]
