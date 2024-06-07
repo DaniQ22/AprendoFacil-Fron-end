@@ -10,6 +10,8 @@ import { CustomerRoutingModule } from './customer/customer-routing.module';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { HttpErrorInterceptor } from './core/Interceptor/error.interceptor';
+import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { HttpErrorInterceptor } from './core/Interceptor/error.interceptor';
     AppComponent,
     AdminLayoutComponent,
     LoginAdminComponent,
-    CustomerLayoutComponent
+    CustomerLayoutComponent,
+    NavBarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

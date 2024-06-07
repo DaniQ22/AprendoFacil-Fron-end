@@ -1,0 +1,142 @@
+body {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+}
+.header-info{
+    height: 35rem;
+    background-color: rgb(132, 207, 211);
+    display: flex;
+    align-items: center;
+}
+.header-info .info {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 60rem;
+    padding: 0 50px 0px 70px;
+
+
+    h3{
+        font-size: 25px;
+        color: black;
+        font-family: "Roboto", sans-serif;
+        font-style: normal;
+        letter-spacing: .2em;
+        text-transform: uppercase;
+    }
+    .tittle-info {
+        font-size: 60px;
+        text-align: left;
+        font-family: "Roboto", sans-serif;
+        font-style: normal;
+        font-weight: 100;
+        letter-spacing: .1em;
+
+    }
+    p{
+        font-size: 20px;
+        text-align: justify;
+        font-family: "Roboto", sans-serif;
+        font-style: oblique;
+        color: rgb(100, 98, 98);
+        width: 70%;
+
+    }
+    span{
+        font-size: 20px;
+        font-weight: 800;
+        font-family: "Roboto", sans-serif;
+    }
+    .buscador{
+        height: 3rem;
+        width: 60%;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        padding: 0 5px 0 5px;
+        justify-content: space-around;
+        border:1px solid rgb(183, 180, 180) ;
+        input {
+            width: 90%;
+            height: 80%;
+            border: none;
+            background-color: transparent;
+            outline: none;
+
+        }
+    }
+
+ 
+}
+
+.header-info .image{
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    height: 100%;
+    width: calc(100%-60rem);
+
+    img{
+        object-fit: cover;
+        width:90%;
+        height: 100%;
+    }
+}
+
+.header-2 {
+    background-color: white;
+    height: 40rem;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position: relative;
+
+    .image{
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .image-1, .image-2 {
+            width: 25rem;
+            height: 25rem;
+            border-radius: 50%;
+        }
+        .image-2{
+            background-color: rgb(132, 207, 211);
+        }
+        .image-1 {
+            position: absolute;
+            transform: translate(-60px, -20px);
+            z-index: 1;
+            img{
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+            }
+        }
+        .image-2 {
+            position: 
+            absolute;
+            transform: translate(10px, 20px);
+        }
+    }
+    .info-header-2 {
+
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .box{
+            width: 80%;
+        }
+    }
+}
+
+
+
