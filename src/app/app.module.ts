@@ -12,6 +12,7 @@ import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { HttpErrorInterceptor } from './core/Interceptor/error.interceptor';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { AuhtInterceptor } from './core/Interceptor/interceptor-token';
 
 
 @NgModule({
@@ -29,10 +30,19 @@ import { FooterComponent } from './shared/footer/footer.component';
     CustomerRoutingModule,
     HttpClientModule,
     ReactiveFormsModule
-    
+
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true }
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor, 
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS, 
+      useClass: AuhtInterceptor, 
+      multi: true
+    }
 
   ],
   bootstrap: [AppComponent]

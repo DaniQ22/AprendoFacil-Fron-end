@@ -19,8 +19,16 @@
 
             <span>¿Que quieres aprender?</span>
             <div class="buscador">
-                <input type="text">
-                <i class="fas fa-search"></i>
+                <div class="search">
+                    <input list="cursos-list"
+                    (input)="getCursosByName($event)">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="result-list">
+                    <li *ngFor="let result of result_list">
+                        <a href=""> {{ result.name }}</a>
+                    </li>
+                </div>
             </div>
 
         </div>
