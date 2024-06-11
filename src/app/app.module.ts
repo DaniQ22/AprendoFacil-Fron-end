@@ -13,6 +13,8 @@ import { HttpErrorInterceptor } from './core/Interceptor/error.interceptor';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { AuhtInterceptor } from './core/Interceptor/interceptor-token';
+import { SideBarComponent } from './admin/side-bar/side-bar.component';
+import { ListCursosComponent } from './admin/list-cursos/list-cursos.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { AuhtInterceptor } from './core/Interceptor/interceptor-token';
     LoginAdminComponent,
     CustomerLayoutComponent,
     NavBarComponent,
-    FooterComponent
+    FooterComponent,
+    SideBarComponent,
+    ListCursosComponent
   ],
   imports: [
     BrowserModule,

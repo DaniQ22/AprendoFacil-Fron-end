@@ -9,7 +9,8 @@ import { ServiceUtilService } from './service-util.service';
 export class CursosService {
   private baseUrl: string;
 
-  constructor(private http: HttpClient
+  constructor(private http: HttpClient,
+    private utilService: ServiceUtilService
   ) {
     this.baseUrl = 'http://localhost:8080/api/curso/search/';
 
@@ -17,6 +18,10 @@ export class CursosService {
 
   getCursosoByName(query: string): Observable<any[]> {
     return this.http.get<any[]>(this.baseUrl + query)
+  }
+
+  getAllCursos():Observable<any[]>{
+    return this.http.get<any[]>(this.utilService.url + 'api/curso/all');
   }
 }
 

@@ -1,0 +1,53 @@
+<!--
+// v0 by Vercel.
+// https://v0.dev/t/fq1T8AmwKaM
+-->
+<div class="title">
+    <h3>Todos los cursos</h3>
+    <button>Agregar</button>
+</div>
+
+<div class="bg-white dark:bg-gray-950 rounded-lg shadow-lg overflow-hidden">
+    <div class="overflow-x-auto">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+            <thead class="text-xs font-medium uppercase bg-gray-100 dark:bg-gray-800 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-4">
+                        Nombre
+                    </th>
+                    <th scope="col" class="px-6 py-4">
+                        Descripción
+                    </th>
+                    <th scope="col" class="px-6 py-4 text-center">
+                        Duración
+                    </th>
+                    <th scope="col" class="px-6 py-4">
+                        Acciones
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800"
+                    *ngFor="let cur of cursos">
+                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">
+                        {{cur.name}}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{cur.decription}}
+                    </td>
+                    <td class="px-6 py-4 text-center" >
+                        {{cur.id_asignatura}}
+                    </td>
+                    <td class="px-4 py-3">
+                        <div class="flex items-center gap-2">
+                            <button>
+                                Eliminar
+                            </button>
+                            <button>Ver</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
