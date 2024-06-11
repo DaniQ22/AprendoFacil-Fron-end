@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class NavBarComponent {
 
+  isOpenNabVar: boolean = false;
+
+
+  openNavBar(){
+    this.isOpenNabVar = !this.isOpenNabVar;
+  }
+
+
 }

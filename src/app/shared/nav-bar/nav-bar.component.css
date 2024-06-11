@@ -7,6 +7,11 @@
     padding-left: 60px;
     padding-right: 60px;
     border: 1px solid red;
+    position: relative;
+}
+
+.nav-bar .menu-hamburguers {
+    display: none;
 }
 .nav-bar button{
     background: rgb(220, 71, 231);
@@ -32,4 +37,40 @@
     text-decoration: none;
     font-weight: 100;
     font-family: 'ROBOTO' sans-serif;
+}
+
+@media (max-width: 690px) {
+    .nav-bar .menu-hamburguers {
+        display: flex;
+        font-size: 35px;
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        top: 25%;
+    }
+    .nav-bar .item,
+    .nav-bar .login-register {
+        display: none;
+    }
+
+    .nav-bar.open  {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        height: 15rem;
+        align-items: flex-start;
+        transition: height .3s;
+    }
+
+    .nav-bar.open .item,
+    .nav-bar.open .login-register {
+        display: flex;
+    }
+
+    .nav-bar.open .item ul {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
 }

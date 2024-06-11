@@ -1,4 +1,6 @@
-<nav class="nav-bar">
+<nav class="nav-bar" 
+[ngClass]="{'open': isOpenNabVar}">
+
     <div class="tittle-nav">
         <h3>
             Aprende-Facil
@@ -19,6 +21,11 @@
     </div>
     <div class="login-register">
         <button>Acceder</button>
+    </div>
+
+    <div class="menu-hamburguers"
+    (click)="openNavBar()">
+        <li class=" fas fa-bars"></li>
     </div>
 
 </nav>
