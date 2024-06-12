@@ -22,3 +22,19 @@
 .title button:hover{
     color: rgb(216, 212, 212);
 }
+
+.btn-delete {
+    color: rgb(237, 125, 33);
+    transition: color .4s;
+}
+.btn-delete:hover{
+    color: red;
+}
+
+.btn-view {
+    color: rgb(75, 75, 77);
+    transition: color .4s;
+}
+.btn-view:hover {
+    color: rgb(122, 122, 236);
+}

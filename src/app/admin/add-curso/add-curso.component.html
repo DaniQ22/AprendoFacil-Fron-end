@@ -1,0 +1,55 @@
+<div class="form" [ngClass]="{'open':isOpenForm}">
+    <form action="" [formGroup]="formCourse">
+        <div class="close-form"
+        (click)="closeForm()">
+            <li class="fas fa-xmark"></li>
+        </div>
+        <header>
+            <h3>Agregar un curso</h3>
+            <p>Llena todos los campos para crear un nuevo curso</p>
+        </header>
+        <div class="p-6 grid gap-4">
+            <div class="grid gap-2">
+                <label
+                    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    for="title">
+                    Nombre
+                </label>
+                <input formControlName="name"
+                    class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    id="title" placeholder="Enter the course title" />
+            </div>
+            <div class="grid gap-2">
+                <label
+                    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    for="description">
+                    Descripcion
+                </label>
+                <textarea formControlName="decription"
+                    class="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    id="description" placeholder="Provide a course description"></textarea>
+            </div>
+            <div class="grid gap-2">
+                <label class="text-sm font-medium leading-none" for="asignatura">
+                    Seleccione una asignatura
+                </label>
+                <select 
+                formControlName="id_asignatura"
+                id="asignatura" class="flex h-10 w-full rounded-md border bg-background px-3 py-2 text-sm">
+                    <option *ngFor="let asignatura of asignaturas"
+                        [value]="asignatura.id">
+                        {{ asignatura.nombre }}
+                    </option>
+                </select>
+            </div>
+            <div class="gap gap-2">
+                <button type="submit"
+                (click)="save()">
+                    Create Course
+                </button>
+            </div>
+
+
+        </div>
+    </form>
+</div>

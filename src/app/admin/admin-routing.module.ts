@@ -5,9 +5,9 @@ import { ListCursosComponent } from './list-cursos/list-cursos.component';
 
 const routes: Routes = [
     {
-        path: '', component: AdminLayoutComponent, children: [
+        path: '', component: AdminLayoutComponent, 
+        children: [
             { path: 'list-cursos', component: ListCursosComponent }
-
         ]
     }
 ]

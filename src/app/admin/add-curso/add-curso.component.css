@@ -1,0 +1,57 @@
+.form {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    top: 50%;
+    left: 30%;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 40rem;
+    height: 35rem;
+    background-color: #ffffff;
+    transition: all .4s;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid rgb(200, 196, 196);
+}
+
+.form.open{
+
+    opacity: 1;
+    visibility: visible;
+
+}
+.form header h3{
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+}
+.form header p {
+    font-family: "Roboto", sans-serif;
+}
+
+.close-form {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgb(235, 230, 230);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+}
+.close-form:hover {
+    background-color: rgb(246, 243, 243);
+}
+.form  button {
+    width: 100%;
+    background-color: black;
+    color: #fff;
+    height: 40px;
+    margin-top: 20px;
+}
+
+

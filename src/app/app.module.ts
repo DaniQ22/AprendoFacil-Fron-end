@@ -15,6 +15,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { AuhtInterceptor } from './core/Interceptor/interceptor-token';
 import { SideBarComponent } from './admin/side-bar/side-bar.component';
 import { ListCursosComponent } from './admin/list-cursos/list-cursos.component';
+import { AddCursoComponent } from './admin/add-curso/add-curso.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ListCursosComponent } from './admin/list-cursos/list-cursos.component';
     NavBarComponent,
     FooterComponent,
     SideBarComponent,
-    ListCursosComponent
+    ListCursosComponent,
+    AddCursoComponent
   ],
   imports: [
     BrowserModule,

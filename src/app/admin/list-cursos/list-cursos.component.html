@@ -4,7 +4,7 @@
 -->
 <div class="title">
     <h3>Todos los cursos</h3>
-    <button>Agregar</button>
+    <button (click)="openForm()">Agregar</button>
 </div>
 
 <div class="bg-white dark:bg-gray-950 rounded-lg shadow-lg overflow-hidden">
@@ -19,9 +19,9 @@
                         Descripción
                     </th>
                     <th scope="col" class="px-6 py-4 text-center">
-                        Duración
+                        Asignatura
                     </th>
-                    <th scope="col" class="px-6 py-4">
+                    <th scope="col" class="px-6 py-4 text-center">
                         Acciones
                     </th>
                 </tr>
@@ -32,18 +32,20 @@
                     <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">
                         {{cur.name}}
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-6 py-4 text-justify">
                         {{cur.decription}}
                     </td>
                     <td class="px-6 py-4 text-center" >
-                        {{cur.id_asignatura}}
+                        {{cur.asignatura.nombre}}
                     </td>
-                    <td class="px-4 py-3">
-                        <div class="flex items-center gap-2">
-                            <button>
-                                Eliminar
+                    <td class="px-6 py-4">
+                        <div class="flex items-center justify-center gap-5">
+                            <button class="btn-delete">
+                                <li class="fas fa-trash"></li>
                             </button>
-                            <button>Ver</button>
+                            <button class="btn-view">
+                                <li class="fas fa-eye"></li>
+                            </button>
                         </div>
                     </td>
                 </tr>
@@ -51,3 +53,5 @@
         </table>
     </div>
 </div>
+
+<app-add-curso [isOpenForm]="isOpenForm"></app-add-curso>
