@@ -1,0 +1,92 @@
+<div class="container">
+    <div class="card-curso-detail">
+        <header>
+            <h3>{{cursoById.name}}</h3>
+            <p>{{cursoById.decription}}
+            </p>
+        </header>
+
+        <div class="topics">
+            <div class="open-box-topics" (click)="openTopics()">
+                <li class="fas fa-chevron-up" [ngClass]="{'up': showTopicsOfCourse}"></li>
+            </div>
+            <h4>Temas</h4>
+            <div class="box-topic" 
+            [ngClass]="{'close-topics': showTopicsOfCourse}">
+                <div class="topic">
+                    <h5 class="name-topic">
+                        Variables y Tipos de Datos en Programación
+                    </h5>
+                    <p>Las variables son un componente esencial en cualquier lenguaje de programación. Una variable es
+                        un
+                        espacio de almacenamiento que puede contener datos y puede ser modificada durante la ejecución
+                        de un
+                        programa. Los tipos de datos definen el tipo de valor que puede almacenar una variable, como
+                        números
+                        enteros, decimales, caracteres, cadenas de texto, entre otros.</p>
+
+                    <div class="questions">
+                        <div class="open-box-questions"
+                        [ngClass]="{'open-question': !showQuestionsOfCourse}"
+                        (click)="openQuestiosn()">
+                            <li class="fas fa-chevron-down"></li>
+                        </div>
+                        <h4>Preguntas</h4>
+                        <div class="box-question"
+                        [ngClass]="{'closed':showQuestionsOfCourse}">
+                            <div class="closed-question">
+                                <div class="quetion">
+                                    <p>Enunciado de la pregunta</p>
+                                    <ul>
+                                        <li>
+                                            Opcion 1
+                                        </li>
+                                        <li> Opcion 1</li>
+                                        <li> Opcion 1</li>
+                                        <li> Opcion 1</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="open-question" *ngIf="false">
+                                <div class="question">
+                                    <p>Enunciado</p>
+                                    <span>Respuesta</span>
+                                </div>
+                            </div>
+                            <button>
+                                <li class="fas fa-plus"></li> Agrega una prefunta
+                            </button>
+                        </div>
+                        
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="add-new-tema">
+
+                <button (click)="openFormTopic()">
+                    <li class="fas fa-plus"></li>
+                    Agrega un nuevo tema
+                </button>
+            </div>
+        </div>
+        <div class="flex justify-end gap-2 mt-4">
+            <button
+                class="bg-blue-300 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:text-accent-foreground h-10 px-4 py-2 hover:bg-blue-200 dark:hover:bg-gray-800 transition-colors">
+                <li class="fas fa-arrow-left"></li>
+            </button>
+            <button
+                class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:text-accent-foreground h-10 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                Actualizar
+            </button>
+            <button
+                class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-gray-900 text-gray-50 hover:bg-gray-900/90 transition-colors dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90">
+                Guardar
+            </button>
+        </div>
+    </div>
+    <app-form-topic (closeForm)="receibeEventCloseForm($event)" class="form-topic"
+        *ngIf="isOpenFormATopic"></app-form-topic>
+</div>

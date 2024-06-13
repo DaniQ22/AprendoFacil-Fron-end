@@ -27,6 +27,10 @@ export class CursosService {
   saveCourse(data: any) :Observable<any>{
     return this.http.post(this.utilService.url + 'api/curso/save', data)
   }
+
+  getCourseById(id: number):Observable<any>{
+    return this.http.get(this.utilService.url + 'api/curso/get-by-id/' + id);
+  }
 }
 
 

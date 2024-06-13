@@ -12,7 +12,7 @@ export class SideBarComponent {
   constructor(private router: Router){}
 
   navigateToListProduct(){
-    this.router.navigate(['/dashboard/list-cursos'])
+    this.router.navigate(['/dashboard/list-course']);
   }
 
 }

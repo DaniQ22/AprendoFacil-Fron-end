@@ -6,9 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AdminLayoutComponent } from './admin/admin-layout/admin-layout.component';
 import { LoginAdminComponent } from './auth/login-admin/login-admin.component';
 import { CustomerLayoutComponent } from './customer/customer-layout/customer-layout.component';
-import { CustomerRoutingModule } from './customer/customer-routing.module';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpErrorInterceptor } from './core/Interceptor/error.interceptor';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -16,6 +15,8 @@ import { AuhtInterceptor } from './core/Interceptor/interceptor-token';
 import { SideBarComponent } from './admin/side-bar/side-bar.component';
 import { ListCursosComponent } from './admin/list-cursos/list-cursos.component';
 import { AddCursoComponent } from './admin/add-curso/add-curso.component';
+import { CourseDetailComponent } from './admin/course-detail/course-detail.component';
+import { FormTopicComponent } from './admin/util-components/form-topic/form-topic.component';
 
 
 @NgModule({
@@ -28,12 +29,13 @@ import { AddCursoComponent } from './admin/add-curso/add-curso.component';
     FooterComponent,
     SideBarComponent,
     ListCursosComponent,
-    AddCursoComponent
+    AddCursoComponent,
+    CourseDetailComponent,
+    FormTopicComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CustomerRoutingModule,
     HttpClientModule,
     ReactiveFormsModule
 

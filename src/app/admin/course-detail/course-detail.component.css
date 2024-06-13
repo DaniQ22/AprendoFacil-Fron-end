@@ -1,0 +1,138 @@
+.container{
+    max-width: 100%;
+    position: relative;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+}
+.card-curso-detail {
+    width: 100%;
+    padding: 1rem;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(231, 230, 230);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.card-curso-detail header h3{
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+.card-curso-detail header p{
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    text-align: justify;
+
+}
+
+.card-curso-detail .topics {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  
+}
+
+.card-curso-detail .add-new-tema button{
+    border-radius: 10px;
+    background-color: rgb(29, 76, 138);
+    padding: 5px;
+    color: #fff;
+    transition: background-color .4s, color .4s;
+    border: 1px solid rgb(219, 215, 215);
+}
+.card-curso-detail .add-new-tema button:hover{
+    background-color: rgb(77, 77, 243);
+    color: black;
+}
+
+.card-curso-detail .topics li.up {
+    transform: rotate(180deg);
+    transition: trasnform .3s;
+}
+.card-curso-detail .box-topic {
+    transition: height .3s ease;
+}
+
+.card-curso-detail .box-topic .topic {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.card-curso-detail .box-topic .name-topic {
+    font-weight: 700;
+}
+
+.card-curso-detail .box-topic.close-topics {
+    height: 0;
+    visibility: hidden;
+    transition: height .3s ease;
+
+}
+
+.card-curso-detail .box-topic .topic .questions {
+    position: relative;
+}
+.card-curso-detail .box-topic .topic .questions .box-question {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.card-curso-detail .box-topic .topic .questions .box-question p{
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+}
+.card-curso-detail .box-topic .topic .questions .box-question.closed{
+    height: 0;
+    visibility: hidden;
+}
+
+.card-curso-detail .box-topic .topic .questions .box-question button{
+    background-color: rgb(88, 236, 241);
+    padding: .5rem;
+    border-radius: 10px;
+    border: 1px solid rgb(237, 235, 235);
+    width: 12rem;
+
+}
+.card-curso-detail .box-topic .topic .questions .open-box-questions {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+}
+
+.card-curso-detail .box-topic .topic .questions .open-box-questions.open-question{
+    transform: rotate(-180deg);
+}
+
+.card-curso-detail .topics h4{
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    
+}
+
+
+.card-curso-detail .topics .open-box-topics{
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    cursor: pointer;
+    transition: all .3s;
+
+}
+
+.form-topic {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}

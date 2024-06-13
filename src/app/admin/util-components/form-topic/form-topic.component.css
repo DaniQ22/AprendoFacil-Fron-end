@@ -1,0 +1,30 @@
+.form-topic {
+    height: 100%;
+    width: 100%;
+}
+
+.form-topic .card-topic{
+    width: 40rem;
+    border: 1px solid rgb(224, 220, 220);
+    border-radius: 10px;
+    background-color: #fff;
+    position: relative;
+}
+
+.form-topic .card-topic .close-form{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: rgb(224, 218, 218);
+    border-radius: 50%;
+    height: 1.5rem;
+    width: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+.form-topic .card-topic .close-form:hover{
+    background-color: rgb(242, 239, 239);
+}
