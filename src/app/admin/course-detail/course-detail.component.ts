@@ -58,10 +58,12 @@ export class CourseDetailComponent implements OnInit, OnDestroy{
     this.showTopicsOfCourse = !this.showTopicsOfCourse;
   }
 
+
   openQuestiosn() {
     this.showQuestionsOfCourse = !this.showQuestionsOfCourse;
   }
 
+  //Metodo para abrir el formulario para guardar un tema
   openFormTopic() {
     this.isOpenFormATopic = !this.isOpenFormATopic;
   }

@@ -87,6 +87,8 @@
             </button>
         </div>
     </div>
-    <app-form-topic (closeForm)="receibeEventCloseForm($event)" class="form-topic"
+    <app-form-topic (closeForm)="receibeEventCloseForm($event)"
+    [idCourse]="cursoById.id"
+    class="form-topic"
         *ngIf="isOpenFormATopic"></app-form-topic>
 </div>
