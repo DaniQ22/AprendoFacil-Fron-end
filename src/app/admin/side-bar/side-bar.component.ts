@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthServiceService } from 'src/app/core/services/auth-service.service';
 
 @Component({
   selector: 'app-side-bar',
@@ -9,7 +10,9 @@ import { Router } from '@angular/router';
 export class SideBarComponent {
 
 
-  constructor(private router: Router){}
+  constructor(private router: Router, private user: AuthServiceService){}
+
+
 
   navigateToListProduct(){
     this.router.navigate(['/dashboard/list-course']);

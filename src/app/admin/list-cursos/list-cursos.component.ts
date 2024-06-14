@@ -20,9 +20,9 @@ export class ListCursosComponent implements OnInit {
 
   constructor(private cursoService: CursosService,
     private router: Router,
-    private utilService: ServiceUtilService) 
+    private utilService: ServiceUtilService)
     {
-      
+
     }
 
 
@@ -30,6 +30,7 @@ export class ListCursosComponent implements OnInit {
 
   openForm() {
     this.isOpenForm = !this.isOpenForm;
+    console.log(this.isOpenForm)
   }
 
 
