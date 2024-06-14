@@ -8,23 +8,24 @@ import { loginModel } from '../Models/model-login';
   providedIn: 'root'
 })
 export class AuthServiceService {
+  emailUserLoggedIn: string = '';
 
   constructor(private http: HttpClient,
     private util_service: ServiceUtilService
   ) { }
 
   login(login: loginModel): Observable<any> {
-    
+
     return this.http.post<any>(`${this.util_service.url}api/auth/login`, login, {observe: 'response' })
       .pipe(
         map((response: HttpResponse<any>) => {
           console.log('Respuesta del servidor:', response);
           const bearerToken = response.headers.get('Authorization') || '';
           const token = bearerToken.replace('Bearer ', '');
-          const emailUserLoggedIn = response.body.message; // Asegúrate de que el cuerpo de la respuesta contiene el mensaje esperado
+          this.emailUserLoggedIn = response.body.message; // Asegúrate de que el cuerpo de la respuesta contiene el mensaje esperado
 
-          if (emailUserLoggedIn) {
-            localStorage.setItem('userEmail', emailUserLoggedIn);
+          if (this.emailUserLoggedIn) {
+            localStorage.setItem('userEmail', this.emailUserLoggedIn);
           }
           if (token) {
             localStorage.setItem('token', token);
@@ -38,5 +39,9 @@ export class AuthServiceService {
           return throwError(() => new Error(errorMessage));
         })
       );
+  }
+
+  getUserEmail(){
+
   }
 }
