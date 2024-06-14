@@ -1,0 +1,23 @@
+<!--
+// v0 by Vercel.
+// https://v0.dev/t/ct28xt7sZz0
+-->
+
+<section class="grid grid-cols-1 gap-6 p-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <div class="cursor-pointer rounded-lg border bg-card text-card-foreground shadow-md dark:shadow-lg" data-v0-t="card"
+    *ngFor="let topic of listTopicsByCourse">
+        <div class="p-6 space-y-4">
+            <h3 class="whitespace-nowrap tracking-tight text-lg font-semibold">{{topic.nombre}}</h3>
+            <p class="text-gray-500 dark:text-gray-400">
+                {{topic.contenido}}
+            </p>
+        </div>
+    </div>
+
+    <div class="rounded-lg border bg-card text-card-foreground shadow-md dark:shadow-lg flex items-center justify-center cursor-pointer p-5" data-v0-t="card" 
+    (click)="emitterEventoOpenToFormTopic()">
+        <div class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center" >
+            <span class="text-sm text-gray-500">Add topic</span>    
+        </div>
+    </div>
+</section>

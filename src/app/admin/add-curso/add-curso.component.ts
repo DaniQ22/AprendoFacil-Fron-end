@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AsignaturaService } from 'src/app/core/asignatura.service';
+import { AsignaturaService } from 'src/app/core/services/asignatura.service';
 import { CursosService } from 'src/app/core/services/cursos.service';
 
 @Component({

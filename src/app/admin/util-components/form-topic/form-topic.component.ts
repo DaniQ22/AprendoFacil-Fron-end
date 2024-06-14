@@ -1,12 +1,13 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TopicService } from 'src/app/core/services/topic.service';
 
 @Component({
   selector: 'app-form-topic',
   templateUrl: './form-topic.component.html',
   styleUrls: ['./form-topic.component.css']
 })
-export class FormTopicComponent implements OnInit, OnChanges{
+export class FormTopicComponent implements OnInit, OnChanges {
 
   //Variable que almacena el id del curso cada vez que se almacena un tema
   @Input() idCourse!: number;
@@ -21,11 +22,13 @@ export class FormTopicComponent implements OnInit, OnChanges{
 
   @Output() closeForm: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder,
+    private serviceTopic: TopicService
+  ) {
   }
 
   ngOnInit(): void {
-    this.formTopic = this.formBuilder.group ({
+    this.formTopic = this.formBuilder.group({
       nombre: ["", Validators.required],
       contenido: ["", Validators.required]
     })
@@ -39,6 +42,18 @@ export class FormTopicComponent implements OnInit, OnChanges{
     this.closeForm.emit(event);
   }
 
+  saveTopicById() {
+    if (!this.formTopic.valid) {
+      alert("Please fill out the form");
+    }
+
+    this.dataTopic = this.formTopic.value;
+    this.serviceTopic.saveTopic(this.dataTopic).subscribe(response => {
+      alert("Topic saved succesfully");
+    }, (error) => {
+      alert("Error: " + error);
+    });
+  }
 
 
 

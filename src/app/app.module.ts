@@ -17,6 +17,7 @@ import { ListCursosComponent } from './admin/list-cursos/list-cursos.component';
 import { AddCursoComponent } from './admin/add-curso/add-curso.component';
 import { CourseDetailComponent } from './admin/course-detail/course-detail.component';
 import { FormTopicComponent } from './admin/util-components/form-topic/form-topic.component';
+import { CardTopicComponent } from './admin/util-components/card-topic/card-topic.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { FormTopicComponent } from './admin/util-components/form-topic/form-topi
     ListCursosComponent,
     AddCursoComponent,
     CourseDetailComponent,
-    FormTopicComponent
+    FormTopicComponent,
+    CardTopicComponent
   ],
   imports: [
     BrowserModule,

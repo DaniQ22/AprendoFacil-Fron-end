@@ -71,4 +71,8 @@ export class CourseDetailComponent implements OnInit, OnDestroy{
   receibeEventCloseForm(event: boolean) {
     this.isOpenFormATopic = event;
   }
+
+  receibeEventToOpenFormTopic(event: boolean){
+    this.isOpenFormATopic = event;
+  }
 }
