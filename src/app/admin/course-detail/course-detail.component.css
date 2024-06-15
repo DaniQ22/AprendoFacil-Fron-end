@@ -55,7 +55,7 @@
     transition: trasnform .3s;
 }
 .card-curso-detail .box-topic {
-    transition: height .3s ease;
+    height: auto;
 }
 
 .card-curso-detail .box-topic .topic {
@@ -71,7 +71,6 @@
 .card-curso-detail .box-topic.close-topics {
     height: 0;
     visibility: hidden;
-    transition: height .3s ease;
 
 }
 

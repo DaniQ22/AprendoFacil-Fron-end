@@ -1,8 +1,8 @@
-<form class="form-topic">
- 
+<form class="form-topic"
+[formGroup]="formTopic">
+
     <div class="card-topic">
-        <div class="close-form"
-        (click)="EmitEvent(false)">
+        <div class="close-form" (click)="EmitEvent(false)">
             <li class="fas fa-xmark"></li>
         </div>
         <div class="p-6 space-y-4">
@@ -17,8 +17,10 @@
                     Nombre del Tema
                 </label>
                 <input
+                
                     class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                    id="name" placeholder="Ingresa el nombre del tema" />
+                    id="name" placeholder="Ingresa el nombre del tema"
+                    formControlName = "nombre" />
             </div>
             <div class="space-y-2">
                 <label
@@ -27,6 +29,7 @@
                     Contenido del Tema
                 </label>
                 <textarea
+                formControlName="contenido"
                     class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[150px]"
                     id="content" placeholder="Escribe el contenido del tema"></textarea>
             </div>
@@ -58,12 +61,13 @@
 
             <div class="space-y-2">
                 <button
-                    class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-gray-900 rounded-md shadow-sm hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-950 focus:ring-offset-2 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-200 dark:focus:ring-gray-300">
+                    class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-gray-900 rounded-md shadow-sm hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-950 focus:ring-offset-2 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-200 dark:focus:ring-gray-300"
+                    (click)="saveTopicById()">
                     Guardar
                 </button>
             </div>
         </div>
 
-        
+
     </div>
 </form>

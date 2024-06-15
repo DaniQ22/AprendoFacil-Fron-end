@@ -1,0 +1,22 @@
+.questions{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+
+    gap: .5rem;
+
+}
+ul .tittle-question {
+    font-weight: 700;
+}
+li {
+    width: 70%;
+    padding: .3rem;
+    border-radius: 10px;
+}
+
+

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Tema } from 'src/app/core/Models/model-tema';
 import { TopicService } from 'src/app/core/services/topic.service';
 
 @Component({
@@ -18,7 +19,7 @@ export class FormTopicComponent implements OnInit, OnChanges {
   //FormGroup para alamcenar la informacion de un tema
   formTopic!: FormGroup;
   //Data que se envia a la base de datos
-  dataTopic!: any;
+  dataTopic!: Tema;
 
   @Output() closeForm: EventEmitter<boolean> = new EventEmitter<boolean>();
 
@@ -40,14 +41,18 @@ export class FormTopicComponent implements OnInit, OnChanges {
 
   EmitEvent(event: boolean) {
     this.closeForm.emit(event);
+
   }
 
   saveTopicById() {
     if (!this.formTopic.valid) {
       alert("Please fill out the form");
+      return;
     }
 
     this.dataTopic = this.formTopic.value;
+    this.dataTopic.idCurso = this.idCourse;
+    this.dataTopic.recurso = this.resourceTopic;
     this.serviceTopic.saveTopic(this.dataTopic).subscribe(response => {
       alert("Topic saved succesfully");
     }, (error) => {

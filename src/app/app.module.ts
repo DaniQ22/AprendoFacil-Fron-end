@@ -18,6 +18,8 @@ import { AddCursoComponent } from './admin/add-curso/add-curso.component';
 import { CourseDetailComponent } from './admin/course-detail/course-detail.component';
 import { FormTopicComponent } from './admin/util-components/form-topic/form-topic.component';
 import { CardTopicComponent } from './admin/util-components/card-topic/card-topic.component';
+import { TopicDetailsComponent } from './admin/util-components/topic-details/topic-details.component';
+import { QuestionsComponent } from './admin/util-components/questions/questions.component';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { CardTopicComponent } from './admin/util-components/card-topic/card-topi
     AddCursoComponent,
     CourseDetailComponent,
     FormTopicComponent,
-    CardTopicComponent
+    CardTopicComponent,
+    TopicDetailsComponent,
+    QuestionsComponent
   ],
   imports: [
     BrowserModule,

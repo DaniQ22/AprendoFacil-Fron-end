@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="card-curso-detail">
+    <div class="card-curso-detail max-w-5xl my-10">
         <header>
             <h3>{{cursoById.name}}</h3>
             <p>{{cursoById.decription}}
@@ -14,9 +14,12 @@
             <div class="box-topic" 
             [ngClass]="{'close-topics': showTopicsOfCourse}">
                 <app-card-topic [idCourse]="cursoById.id"
-                (emitterEventOpenForm)="receibeEventToOpenFormTopic($event)"></app-card-topic>
+                (emitterEventOpenForm)="receibeEventToOpenFormTopic($event)"
+                ></app-card-topic>
             </div>
         </div>
+
+    
         <div class="flex justify-end gap-2 mt-4">
             <button
                 class="bg-blue-300 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:text-accent-foreground h-10 px-4 py-2 hover:bg-blue-200 dark:hover:bg-gray-800 transition-colors">

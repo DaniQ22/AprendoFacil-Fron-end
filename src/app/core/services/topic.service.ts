@@ -18,6 +18,11 @@ export class TopicService {
   }
 
   getByTopicByCourse(idCourse: number): Observable<Tema[]>{
-    return this.http.get<Tema[]>(this.utilService.url + 'api/tema/get-by-id/' + idCourse);
+    return this.http.get<Tema[]>(this.utilService.url + 'api/tema/get-by-id-course/' + idCourse);
+  }
+
+
+  getTopicById(idTopic: number):Observable<Tema>{
+    return this.http.get<Tema>(this.utilService.url + 'api/tema/get-by-id' + idTopic);
   }
 }

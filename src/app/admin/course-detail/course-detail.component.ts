@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Course } from 'src/app/core/Models/model-curso';
 import { CursosService } from 'src/app/core/services/cursos.service';
@@ -9,12 +9,11 @@ import { ServiceUtilService } from 'src/app/core/services/service-util.service';
   templateUrl: './course-detail.component.html',
   styleUrls: ['./course-detail.component.css']
 })
-export class CourseDetailComponent implements OnInit, OnDestroy{
+export class CourseDetailComponent implements OnInit, OnDestroy, OnChanges{
   //Variable para almacenar la id de un curso
   courseId!: number;
 
   cursoById!: Course;
-
 
   //Variable para ver todos los temas de un curso
   showTopicsOfCourse: boolean = false;
@@ -38,6 +37,11 @@ export class CourseDetailComponent implements OnInit, OnDestroy{
     });
 
   }
+
+  ngOnChanges(changes: SimpleChanges): void {
+  
+  }
+
   ngOnDestroy(): void {
   }
 
@@ -75,4 +79,5 @@ export class CourseDetailComponent implements OnInit, OnDestroy{
   receibeEventToOpenFormTopic(event: boolean){
     this.isOpenFormATopic = event;
   }
+
 }

@@ -1,12 +1,11 @@
-<!--
-// v0 by Vercel.
-// https://v0.dev/t/ct28xt7sZz0
--->
-
-<section class="grid grid-cols-1 gap-6 p-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-    <div class="cursor-pointer rounded-lg border bg-card text-card-foreground shadow-md dark:shadow-lg" data-v0-t="card"
-    *ngFor="let topic of listTopicsByCourse">
-        <div class="p-6 space-y-4">
+<section class="grid grid-cols-1 gap-6 p-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 
+">
+    <div class="cursor-pointer rounded-lg border bg-card text-card-foreground shadow-md dark:shadow-lg hover:-translate-y-1 transition-all" 
+    data-v0-t="card"
+    *ngFor="let topic of listTopicsByCourse"
+    >
+        <div class="p-6 space-y-4"
+        (click)="EmitIdTopic(topic.id)">
             <h3 class="whitespace-nowrap tracking-tight text-lg font-semibold">{{topic.nombre}}</h3>
             <p class="text-gray-500 dark:text-gray-400">
                 {{topic.contenido}}
@@ -21,3 +20,5 @@
         </div>
     </div>
 </section>
+
+<!-- <app-topic-details [idTopic]="EmitterIdTopic"></app-topic-details> -->

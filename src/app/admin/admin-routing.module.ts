@@ -5,6 +5,7 @@ import { ListCursosComponent } from './list-cursos/list-cursos.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { CardTopicComponent } from './util-components/card-topic/card-topic.component';
 import { permissionsGuard } from '../core/guard/permissions.guard';
+import { TopicDetailsComponent } from './util-components/topic-details/topic-details.component';
 
 const routes: Routes = [
     {
@@ -12,7 +13,8 @@ const routes: Routes = [
         component: AdminLayoutComponent,
         children: [
             { path: 'list-course', component: ListCursosComponent },
-            { path: 'list-course/detail-course/:id', component: CourseDetailComponent }
+            { path: 'list-course/detail-course/:id', component: CourseDetailComponent },
+            { path: 'topic-detail', component: TopicDetailsComponent}
         ],
         canActivate: [permissionsGuard]
     }

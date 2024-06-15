@@ -17,11 +17,11 @@ export class HttpErrorInterceptor implements HttpInterceptor {
                     // Relanzar el error para que sea manejado en otro lugar
                 }
 
-                if(err.status === 401){
-                    this.route.navigate(['/admin'])
-                    alert("Usted no esta authorizado")
-                    localStorage.clear();
-                }
+                // if(err.status === 401){
+                //     this.route.navigate(['/admin'])
+                //     alert("Usted no esta authorizado")
+                //     localStorage.clear();
+                // }
                 return throwError(() => err);
 
             })
