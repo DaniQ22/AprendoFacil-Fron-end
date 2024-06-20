@@ -15,12 +15,12 @@
 
         <div class="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden">
             <div class="h-[100px] w-full flex items-center justify-center p-3">
-                <div class="view-pdf flex gap-2">
+                <div class="view-pdf flex gap-10 justify-between w-full">
                     <div class="info">
-                        <h3 class="text-black font-bold">Guía de Programación Orientada a Objetos</h3>
-                        <p class="text-gray-500">Descarga el PDF con una guía detallada sobre los conceptos clave de la
-                            Programación Orientada a Objetos</p>
+                        <h3 class="text-black font-bold">Guía de  + {{topicByDetail.nombre}}</h3>
+                        <p class="text-gray-500">Descarga el PDF con una guía detallada + {{topicByDetail.nombre}}</p>
                     </div>
+
                     <button class="bg-black text-white px-3 py-0 rounded-md w-40 hover:bg-slate-800">
                         <li class="fas fa-file"></li> Ver pdf
                     </button>

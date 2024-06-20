@@ -10,6 +10,8 @@ import { TopicService } from 'src/app/core/services/topic.service';
 })
 export class FormTopicComponent implements OnInit, OnChanges {
 
+  selectedFile: File | null = null;
+
   //Variable que almacena el id del curso cada vez que se almacena un tema
   @Input() idCourse!: number;
 
@@ -31,7 +33,8 @@ export class FormTopicComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     this.formTopic = this.formBuilder.group({
       nombre: ["", Validators.required],
-      contenido: ["", Validators.required]
+      contenido: ["", Validators.required],
+      
     })
   }
 
@@ -52,12 +55,24 @@ export class FormTopicComponent implements OnInit, OnChanges {
 
     this.dataTopic = this.formTopic.value;
     this.dataTopic.idCurso = this.idCourse;
-    this.dataTopic.recurso = this.resourceTopic;
-    this.serviceTopic.saveTopic(this.dataTopic).subscribe(response => {
+
+    const formData = new FormData();
+    formData.append('tema', JSON.stringify(this.dataTopic));
+    if (this.selectedFile) {
+      formData.append('resource', this.selectedFile, this.selectedFile.name);
+    }
+
+
+    this.serviceTopic.saveTopic(formData).subscribe(response => {
       alert("Topic saved succesfully");
     }, (error) => {
       alert("Error: " + error);
     });
+  }
+
+
+  onFileSelected(event: any): void {
+    this.selectedFile = event.target.files[0];
   }
 
 

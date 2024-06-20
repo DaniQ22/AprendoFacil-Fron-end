@@ -13,16 +13,17 @@ export class TopicService {
     private utilService: ServiceUtilService
   ) { }
 
-  saveTopic(dataTopic: any): Observable<any>{
-    return this.http.post(this.utilService.url + 'api/tema/save', dataTopic);
+  saveTopic(formData: FormData): Observable<any>{
+    return this.http.post(this.utilService.url + 'api/tema/save', formData);
   }
 
+  
   getByTopicByCourse(idCourse: number): Observable<Tema[]>{
     return this.http.get<Tema[]>(this.utilService.url + 'api/tema/get-by-id-course/' + idCourse);
   }
 
 
   getTopicById(idTopic: number):Observable<Tema>{
-    return this.http.get<Tema>(this.utilService.url + 'api/tema/get-by-id' + idTopic);
+    return this.http.get<Tema>(this.utilService.url + 'api/tema/get-by-id/' + idTopic);
   }
 }

@@ -7,20 +7,22 @@ import { TopicService } from 'src/app/core/services/topic.service';
   templateUrl: './card-topic.component.html',
   styleUrls: ['./card-topic.component.css']
 })
-export class CardTopicComponent implements OnInit, OnChanges{
+export class CardTopicComponent implements OnInit, OnChanges {
 
   //Variable para recibir el id de un curso
   @Input() idCourse!: number;
 
+  viewTopicDetail: boolean = false;
+
   @Output() emitterEventOpenForm: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   //Con esta variable emitiremos el id del tema una vez se quiera ver el contenido de un tema
-  EmitterIdTopic!:number;
+  EmitterIdTopic!: number;
 
 
   listTopicsByCourse: Tema[] = [];
 
-  constructor(private serviceTopic: TopicService ){
+  constructor(private serviceTopic: TopicService) {
 
   }
 
@@ -31,25 +33,26 @@ export class CardTopicComponent implements OnInit, OnChanges{
     console.log(this.idCourse);
   }
 
-  getTopicsById(){
+  getTopicsById() {
 
-    this.serviceTopic.getByTopicByCourse(this.idCourse).subscribe(res=>{
-      if(res){
+    this.serviceTopic.getByTopicByCourse(this.idCourse).subscribe(res => {
+      if (res) {
         this.listTopicsByCourse = res;
         console.log(this.listTopicsByCourse);
-      }else{
+      } else {
         this.listTopicsByCourse = [];
       }
     })
-    
+
   }
 
-  emitterEventoOpenToFormTopic(){
+  emitterEventoOpenToFormTopic() {
     this.emitterEventOpenForm.emit(true);
   }
 
-  EmitIdTopic(idTopic: number){
-  this.EmitterIdTopic = idTopic;
+  EmitIdTopic(idTopic: number) {
+    this.viewTopicDetail = true;
+    this.EmitterIdTopic = idTopic;
   }
 
 

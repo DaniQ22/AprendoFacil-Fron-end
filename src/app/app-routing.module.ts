@@ -5,7 +5,7 @@ import { permissionsGuard } from './core/guard/permissions.guard';
 
 const routes: Routes = [
   {
-    path: 'index', loadChildren: ()=> import('./customer/customer-routing.module').then(m=>m.CustomerRoutingModule)
+    path: '', loadChildren: ()=> import('./customer/customer-routing.module').then(m=>m.CustomerRoutingModule)
   },
   {
     path: 'admin', loadChildren: () => import('./auth/auth-routing.module').then(m=>m.AuthRoutingModule)

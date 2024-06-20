@@ -21,4 +21,8 @@
     </div>
 </section>
 
+<div class="container-topic-detail" *ngIf="viewTopicDetail">
+    <app-topic-details [idTopic]="EmitterIdTopic"></app-topic-details>
+</div>
+
 <!-- <app-topic-details [idTopic]="EmitterIdTopic"></app-topic-details> -->

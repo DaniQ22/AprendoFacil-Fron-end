@@ -20,6 +20,8 @@ import { FormTopicComponent } from './admin/util-components/form-topic/form-topi
 import { CardTopicComponent } from './admin/util-components/card-topic/card-topic.component';
 import { TopicDetailsComponent } from './admin/util-components/topic-details/topic-details.component';
 import { QuestionsComponent } from './admin/util-components/questions/questions.component';
+import { CourseCardComponent } from './customer/course-card/course-card.component';
+import { HomeComponent } from './customer/home/home.component';
 
 
 @NgModule({
@@ -37,7 +39,9 @@ import { QuestionsComponent } from './admin/util-components/questions/questions.
     FormTopicComponent,
     CardTopicComponent,
     TopicDetailsComponent,
-    QuestionsComponent
+    QuestionsComponent,
+    CourseCardComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
