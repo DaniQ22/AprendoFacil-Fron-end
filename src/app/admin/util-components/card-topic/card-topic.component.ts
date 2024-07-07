@@ -56,4 +56,12 @@ export class CardTopicComponent implements OnInit, OnChanges {
   }
 
 
+  // Metodo para mostrar una parte del contenido
+  truncateContent(content: string, limit: number): string {
+    if (content.length > limit) {
+      return content.substring(0, limit) + '...';
+    }
+    return content;
+  }
+
 }

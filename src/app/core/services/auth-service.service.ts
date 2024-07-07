@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { ServiceUtilService } from './service-util.service';
 import { Observable, catchError, map, throwError } from 'rxjs';
 import { loginModel } from '../Models/model-login';
+import { User } from '../Models/user-model';
 
 @Injectable({
   providedIn: 'root'
@@ -23,14 +24,12 @@ export class AuthServiceService {
           const bearerToken = response.headers.get('Authorization') || '';
           const token = bearerToken.replace('Bearer ', '');
           this.emailUserLoggedIn = response.body.message; // Asegúrate de que el cuerpo de la respuesta contiene el mensaje esperado
-
           if (this.emailUserLoggedIn) {
             localStorage.setItem('userEmail', this.emailUserLoggedIn);
           }
           if (token) {
             localStorage.setItem('token', token);
           }
-
           return response.body;
         }),
         catchError((error: HttpErrorResponse) => {
@@ -41,7 +40,7 @@ export class AuthServiceService {
       );
   }
 
-  getUserEmail(){
-
+  registerStudent(user: User): Observable<any>{
+    return this.http.post<any>(this.util_service.url + 'api/auth/register-student', user);
   }
 }

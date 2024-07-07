@@ -24,8 +24,8 @@ export class CursosService {
     return this.http.get<any[]>(this.utilService.url + 'api/curso/all');
   }
 
-  saveCourse(data: any) :Observable<any>{
-    return this.http.post(this.utilService.url + 'api/curso/save', data)
+  saveCourse(formData: FormData) :Observable<any>{
+    return this.http.post(this.utilService.url + 'api/curso/save', formData)
   }
 
   getCourseById(id: number):Observable<any>{

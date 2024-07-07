@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Course } from 'src/app/core/Models/model-curso';
 import { CursosService } from 'src/app/core/services/cursos.service';
 import { ServiceUtilService } from 'src/app/core/services/service-util.service';
@@ -13,7 +13,7 @@ export class CourseDetailComponent implements OnInit, OnDestroy, OnChanges{
   //Variable para almacenar la id de un curso
   courseId!: number;
 
-  cursoById!: Course;
+  cursoById: Course | null = null;
 
   //Variable para ver todos los temas de un curso
   showTopicsOfCourse: boolean = false;
@@ -25,14 +25,15 @@ export class CourseDetailComponent implements OnInit, OnDestroy, OnChanges{
 
   constructor(private route: ActivatedRoute,
     private cursoService: CursosService,
-    private utilService: ServiceUtilService
+    private utilService: ServiceUtilService,
+    private router: Router
   ) {
 
   }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.courseId = +params['id']; // El signo + convierte la cadena a número
+      this.courseId = + params['id']; // El signo + convierte la cadena a número
       this.getCourseDetails(this.courseId);
     });
 
@@ -78,6 +79,10 @@ export class CourseDetailComponent implements OnInit, OnDestroy, OnChanges{
 
   receibeEventToOpenFormTopic(event: boolean){
     this.isOpenFormATopic = event;
+  }
+
+  navigateBack(){
+    this.router.navigate(['/dashboard/list-course'])
   }
 
 }

@@ -22,6 +22,17 @@ import { TopicDetailsComponent } from './admin/util-components/topic-details/top
 import { QuestionsComponent } from './admin/util-components/questions/questions.component';
 import { CourseCardComponent } from './customer/course-card/course-card.component';
 import { HomeComponent } from './customer/home/home.component';
+import { CurrentCustomerLayoutComponent } from './current-customer/current-customer-layout/current-customer-layout.component';
+import { NavCurrentCustomerComponent } from './shared/nav-current-customer/nav-current-customer.component';
+import { LoginUserComponent } from './customer/login-user/login-user.component';
+import { RegisterComponent } from './customer/register/register.component';
+import { WelcomeComponent } from './current-customer/welcome/welcome.component';
+import { SearchCourseComponent } from './shared/search-course/search-course.component';
+import { MyCoursesComponent } from './current-customer/my-courses/my-courses.component';
+import { IndicatorCourseComponent } from './shared/indicator-course/indicator-course.component';
+import { LoadingComponent } from './shared/loading/loading.component';
+import { NotFoundCourseBySearchComponent } from './shared/not-found-course-by-search/not-found-course-by-search.component';
+import { NotFoundCourseComponent } from './shared/not-found-course/not-found-course.component';
 
 
 @NgModule({
@@ -41,7 +52,18 @@ import { HomeComponent } from './customer/home/home.component';
     TopicDetailsComponent,
     QuestionsComponent,
     CourseCardComponent,
-    HomeComponent
+    HomeComponent,
+    CurrentCustomerLayoutComponent,
+    NavCurrentCustomerComponent,
+    LoginUserComponent,
+    RegisterComponent,
+    WelcomeComponent,
+    SearchCourseComponent,
+    MyCoursesComponent,
+    IndicatorCourseComponent,
+    LoadingComponent,
+    NotFoundCourseBySearchComponent,
+    NotFoundCourseComponent
   ],
   imports: [
     BrowserModule,

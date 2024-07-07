@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { permissionsGuard } from './core/guard/permissions.guard';
+import { LoadingComponent } from './shared/loading/loading.component';
 
 const routes: Routes = [
   {
@@ -12,6 +11,12 @@ const routes: Routes = [
   },
   {
     path: 'dashboard', loadChildren: () => import('./admin/admin-routing.module').then(m=>m.AdminRoutingModule),
+  },
+  {
+    path : 'current-customer', loadChildren: () => import('./current-customer/customer-current-routing-module').then(m=>m.CurrentCustomerRoutingModule)
+  },
+  {
+    path: 'loading', component: LoadingComponent
   }
 
 ]

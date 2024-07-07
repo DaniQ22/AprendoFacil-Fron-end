@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Course } from 'src/app/core/Models/model-curso';
+import { Curso } from 'src/app/core/Models/seach-cursos';
 import { CursosService } from 'src/app/core/services/cursos.service';
 
 @Component({
@@ -8,27 +10,39 @@ import { CursosService } from 'src/app/core/services/cursos.service';
   styleUrls: ['./course-card.component.css']
 })
 export class CourseCardComponent implements OnInit {
+  listCourses: Course[] = []
 
-  listCourses: Course[] = [];
-  constructor(private coursrService: CursosService){
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+  ) 
+  {
+    const navigation = this.router.getCurrentNavigation();
+    if (navigation?.extras?.state) {
+      this.listCourses = navigation.extras.state['courses'];
+    }
   }
 
 
   ngOnInit(): void {
-    this.getAllCourse();
   }
 
-  getAllCourse(){
-    this.coursrService.getAllCursos().subscribe(
-      (res) => {
-        if(res){
-          this.listCourses = res;
-          console.log("All coruses avalaible: " + res);
-        }
-      }
-    )
+
+  // Metodo para mostrar una parte del descripcion de un curso
+  truncateContent(content: string, limit: number): string {
+    if (content.length > limit) {
+      return content.substring(0, limit) + '...';
+    }
+    return content;
   }
 
-  
+  //Metodo para navegar a login user des  card-curso
+  navigateToLoginUser() {
+    this.router.navigate(['/login-user'])
+  }
+
+
+
+
 
 }

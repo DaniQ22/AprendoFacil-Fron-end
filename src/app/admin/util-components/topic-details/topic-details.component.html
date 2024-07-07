@@ -6,9 +6,9 @@
 <div class="flex flex-col gap-8 max-w-5xl mx-auto  md:px-6">
     <div class="grid gap-2">
         <h1 class="text-xl font-bold">{{topicByDetail.nombre}}</h1>
-            <p>
-                {{topicByDetail.contenido}}
-            </p>
+        <p>
+            {{topicByDetail.contenido}}
+        </p>
     </div>
     <div class="grid gap-4">
         <h4 class="text-2xl font-bold">Recursos adicionales</h4>
@@ -17,11 +17,13 @@
             <div class="h-[100px] w-full flex items-center justify-center p-3">
                 <div class="view-pdf flex gap-10 justify-between w-full">
                     <div class="info">
-                        <h3 class="text-black font-bold">Guía de  + {{topicByDetail.nombre}}</h3>
+                        <h3 class="text-black font-bold">Guía de + {{topicByDetail.nombre}}</h3>
                         <p class="text-gray-500">Descarga el PDF con una guía detallada + {{topicByDetail.nombre}}</p>
                     </div>
 
-                    <button class="bg-black text-white px-3 py-0 rounded-md w-40 hover:bg-slate-800">
+                    <button class="bg-black text-white px-3 py-0 rounded-md w-40 hover:bg-slate-800"
+                    (click)="openResource(topicByDetail.urlResource)"
+                    >    
                         <li class="fas fa-file"></li> Ver pdf
                     </button>
 

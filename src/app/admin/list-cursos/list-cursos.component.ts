@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router, Event } from '@angular/router';
 import { filter } from 'rxjs/operators'; // Importa filter para filtrar eventos específicos de navegación
+import { Course } from 'src/app/core/Models/model-curso';
 import { CursosService } from 'src/app/core/services/cursos.service';
 import { ServiceUtilService } from 'src/app/core/services/service-util.service';
 
@@ -16,7 +17,7 @@ export class ListCursosComponent implements OnInit {
 
   showTableCourse: boolean = true; // Variable para controlar la visibilidad de la tabla de cursos
 
-  cursos: any[] = []
+  cursos: Course[] = []
 
   constructor(private cursoService: CursosService,
     private router: Router,

@@ -1,0 +1,36 @@
+.divider{
+    width: 100%;
+    position: relative;
+    height: 2rem;
+    display: flex;
+    padding: 0 2rem 0 2rem;
+    align-items: center;
+    
+}
+
+.line{ 
+    position: absolute;
+    width: calc(100% - 4rem);
+    background-color:  grey;
+    height: 1px;
+}
+
+.section-indicator-course {
+    height: 2rem;
+    width: auto;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    border: 1px solid rgb(172, 168, 168);
+    position: absolute;
+    z-index: 2;
+    background-color: white;
+    left: 50%;
+    transform: translateX(-50%);
+    p{
+        font-weight: 700;
+        color: rgb(165, 162, 162);
+    }
+}

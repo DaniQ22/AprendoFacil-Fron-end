@@ -1,13 +1,10 @@
-<body>
+<body class="h-screen">
     <header>
-        <app-nav-bar>
+        <app-nav-bar [listCourse]="listCourses">
         </app-nav-bar>
     </header>
 
-    <router-outlet>
-        
-    </router-outlet>
-
+    <router-outlet></router-outlet>
 
     <app-footer></app-footer>
 </body>

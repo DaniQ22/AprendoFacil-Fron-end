@@ -1,8 +1,5 @@
-
-
-<div class="container">
-    <div class="bg-white dark:bg-gray-950 rounded-lg shadow-lg overflow-hidden"
-    *ngIf="showTableCourse">
+<div class="container w-96 border">
+    <div class="bg-white  dark:bg-gray-950 rounded-lg shadow-lg overflow-hidden border" *ngIf="showTableCourse">
         <div class="title">
             <h3>Todos los cursos</h3>
             <button (click)="openForm()">Agregar</button>
@@ -34,7 +31,7 @@
                         <td class="px-6 py-4 text-justify">
                             {{cur.decription}}
                         </td>
-                        <td class="px-6 py-4 text-center" >
+                        <td class="px-6 py-4 text-center">
                             {{cur.asignatura.nombre}}
                         </td>
                         <td class="px-6 py-4">
@@ -42,8 +39,7 @@
                                 <button class="btn-delete">
                                     <li class="fas fa-trash"></li>
                                 </button>
-                                <button class="btn-view"
-                                (click)="navigateToDetailCourse(cur.id)">
+                                <button class="btn-view" (click)="navigateToDetailCourse(cur.id)">
                                     <li class="fas fa-eye"></li>
                                 </button>
                             </div>
@@ -53,8 +49,8 @@
             </table>
         </div>
     </div>
-    
+
     <app-add-curso [isOpenForm]="isOpenForm"></app-add-curso>
-    
+
     <router-outlet></router-outlet>
 </div>
